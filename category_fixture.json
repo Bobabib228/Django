@@ -1,0 +1,22 @@
+[
+{
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+        "name": "test",
+        "description": "test",
+        "created_at": "2026-10-27T15:13:43.626Z",
+        "updated_at": "2026-10-27T15:13:43.626Z"
+    }
+},
+{
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+        "name": "Смартфоны",
+        "description": "Собраны все смартфоны",
+        "created_at": "2026-10-28T08:03:33.380Z",
+        "updated_at": "2026-10-28T08:03:33.380Z"
+    }
+}
+]
