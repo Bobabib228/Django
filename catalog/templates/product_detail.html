@@ -1,0 +1,42 @@
+{% extends 'general.html' %}
+{% load my_tags %}
+{% block content %}
+<div class="product-body" style="display: flex; justify-content: center; align-items: center;" >
+            <div class="product-image">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}" style = "width: 100%;
+                                                                                max-width: 600px;
+                                                                                height: auto;
+                                                                                max-height: 400px;
+                                                                                object-fit: contain;">
+            </div>
+            <div class="product-details" >
+                <table class="product-info" >
+                    <tbody>
+                        <tr>
+                            <th>Название:</th>
+                            <td><p>{{product.name}}</p></td>
+                        </tr>
+                        <tr>
+                            <th>Описание:</th>
+                            <td>{{product.description}}.</td>
+                        </tr>
+                        <tr>
+                            <th>Категория:</th>
+                            <td>{{product.category}}</td>
+                        </tr>
+                        <tr>
+                            <th>Цена:</th>
+                            <td><span class="price">{{product.price}}</span></td>
+                        </tr>
+                        <tr>
+                            <th>Дата создания:</th>
+                            <td>{{product.created_at}}</td>
+                        </tr>
+                        <tr>
+                            <th><button type="button" class="btn btn-sm btn-outline-secondary"><a href ="{% url 'catalog:product_general' %}">Назад</a></button></th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+</div>
+{% endblock %}
