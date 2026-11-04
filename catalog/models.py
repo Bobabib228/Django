@@ -19,8 +19,11 @@ class Category(models.Model):
 class Product(models.Model):
     name = models.CharField(max_length=150)
     description = models.TextField()
-    image = models.ImageField()
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    image = models.ImageField(
+        upload_to="Product/photo",
+        
+    )
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL,related_name='products', null=True)
     price = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
