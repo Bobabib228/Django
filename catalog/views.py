@@ -1,8 +1,15 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from .models import Product
+from django.views.generic import ListView, DetailView
 
-def home(request):
-    return render(request, 'home.html')
+
+class ProductListView(ListView):
+    model = Product
+
+
+class ProductDetailView(DetailView):
+    model = Product
 
 
 def contacts(request):
-    return render(request, "contacts.html")
+    return render(request, "catalog/contacts.html")

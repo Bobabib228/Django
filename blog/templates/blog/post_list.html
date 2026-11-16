@@ -1,0 +1,20 @@
+{%extends 'blog/general.html' %}
+{% load my_tags %}
+{% block content %}
+<div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+    {% for post in object_list %}
+    <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 p-3">
+        <h2 class="display-5">{{ post.title }}</h2>
+        <p class="lead">{{ post.content|truncatechars:10 }}</p>
+      </div>
+      <img src="{{ post.preview_image.url }}" alt="{{ post.title }}" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+        <div class="btn-group">
+            <a class="btn btn-primary" href ="{% url 'blog:post_update' post.pk%}">Редактировать</a>
+            <a class="btn btn-primary" href ="{% url 'blog:post_delete' post.pk%}">Удалить</a>
+            <a class="btn btn-primary" href ="{% url 'blog:post_detail' post.pk %}">Посмотреть</a>
+        </div>
+    </div>
+    {% endfor %}
+  </div>
+{% endblock %}
