@@ -9,6 +9,11 @@
         <p class="lead">{{ post.content|truncatechars:10 }}</p>
       </div>
       <img src="{{ post.preview_image.url }}" alt="{{ post.title }}" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+        <div class="btn-group">
+            <a class="btn btn-primary" href ="{% url 'blog:post_update' post.pk%}">Редактировать</a>
+            <a class="btn btn-primary" href ="{% url 'blog:post_delete' post.pk%}">Удалить</a>
+            <a class="btn btn-primary" href ="{% url 'blog:post_detail' post.pk %}">Посмотреть</a>
+        </div>
     </div>
     {% endfor %}
   </div>
